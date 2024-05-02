@@ -32,7 +32,7 @@ const List = ({ items }) => {
     <Fragment>
       <h2>Selected Items:</h2>
       {selectedItems.length === 0 && <p>None</p>}
-      <ul>
+      <ul aria-labelledby="selected-items">
         {selectedItems.map((item) => (
           <li key={item.name}>{item.name}</li>
         ))}
@@ -40,7 +40,7 @@ const List = ({ items }) => {
 
       <hr></hr>
       <h2>Items:</h2>
-      <ul className="List">
+      <ul className="List" aria-label="items">
         {items.map((item) => {
           const selected = selectedItems.includes(item);
           return (
